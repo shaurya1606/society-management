@@ -55,12 +55,16 @@ const Navbar = () => {
                             Dashboard
                         </Link>
                         <Link
-                            href="/notifications"
-                            className={navLinkClass(
-                                pathname === '/notifications'
-                            )}
+                            href="/complaints"
+                            className={navLinkClass(pathname === '/complaints')}
                         >
-                            Notifications
+                            My Complaints
+                        </Link>
+                        <Link
+                            href="/complaints/new"
+                            className={navLinkClass(pathname === '/complaints/new')}
+                        >
+                            New Complaint
                         </Link>
                         <Link
                             href="/settings"
