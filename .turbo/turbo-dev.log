@@ -1,0 +1,67 @@
+[2J[m[2;1H> letskraack.v1.0@0.1.0 dev D:\New folder\SAAS-Platform\apps\letskraack.v1.0]0;C:\WINDOWS\system32\cmd.exe[?25h
+> next dev
+
+]0;next-server (v16.0.1)   [38;2;173;127;168m[1m▲ Next.js 16.0.1[m (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.137.116:3000
+
+ [32m[1m✓[m Starting...[K
+ [32m[1m✓[m Ready in 10s
+ [37m[1m○[m Compiling / ...
+ GET / [32m200 [min 42s[2m (compile: 39.1s, render: 2.5s)[22m
+ [37m[1m○[m Compiling /login ...
+ GET /login [32m200 [min 28.1s[2m (compile: 20.4s, render: 7.7s)[22m
+ POST /api/auth/login [33m404 [min 2.2s[2m (compile: 1769ms, render: 398ms)[22m
+ GET / [32m200 [min 1414ms[2m (compile: 46ms, render: 1368ms)[22m
+ GET /login [32m200 [min 410ms[2m (compile: 32ms, render: 379ms)[22m
+ POST /api/auth/login [33m404 [min 234ms[2m (compile: 30ms, render: 204ms)[22m
+ GET /login [32m200 [min 3.0s[2m (compile: 896ms, render: 2.1s)[22m
+ GET /login [32m200 [min 1830ms[2m (compile: 29ms, render: 1801ms)[22m
+ [37m[1m○[m Compiling /api/auth/login ...
+ POST /api/auth/login [33m400 [min 7.8s[2m (compile: 7.2s, render: 516ms)[22m
+ [32m[1m✓[m Compiled in 7s
+ [33m[1m⚠[m Fast Refresh had to perform a full reload due to a runtime error.
+ GET /login [32m200 [min 4.2s[2m (compile: 1407ms, render: 2.8s)[22m
+ [32m[1m✓[m Compiled in 4.7s
+ [32m[1m✓[m Compiled in 2.3s
+ [32m[1m✓[m Compiled in 8.9s
+ GET /login [32m200 [min 329ms[2m (compile: 58ms, render: 271ms)[22m
+ [32m[1m✓[m Compiled in 758ms
+ [32m[1m✓[m Compiled in 4s
+ GET /login [32m200 [min 1650ms[2m (compile: 957ms, render: 692ms)[22m
+ [32m[1m✓[m Compiled in 6.6s
+ POST /api/auth/login [33m400 [min 122ms[2m (compile: 16ms, render: 106ms)[22m
+ GET / [32m200 [min 2.9s[2m (compile: 170ms, render: 2.7s)[22m
+ GET /login [32m200 [min 9.0s[2m (compile: 4.2s, render: 4.8s)[22m
+ POST /api/auth/login [33m400 [min 752ms[2m (compile: 657ms, render: 94ms)[22m
+ GET /login [32m200 [min 2.5s[2m (compile: 183ms, render: 2.3s)[22m
+ GET /login?email=&password= [32m200 [min 2.8s[2m (compile: 222ms, render: 2.5s)[22m
+ GET /login?email=&password= [32m200 [min 3.9s[2m (compile: 557ms, render: 3.3s)[22m
+ POST /api/auth/login [32m200 [min 35ms[2m (compile: 9ms, render: 26ms)[22m
+ [32m[1m✓[m Compiled in 2.6s
+ [32m[1m✓[m Compiled in 2.5s
+ [32m[1m✓[m Compiled in 4s
+ [32m[1m✓[m Compiled in 1746ms
+ [32m[1m✓[m Compiled in 5.1s
+ GET /login?email=&password= [32m200 [min 1052ms[2m (compile: 300ms, render: 752ms)[22m
+ GET /login?email=&password= [32m200 [min 9.0s[2m (compile: 2.5s, render: 6.5s)[22m
+ POST /api/auth/login [32m200 [min 39ms[2m (compile: 9ms, render: 29ms)[22m
+ [37m[1m○[m Compiling /signup ...
+ GET /signup [32m200 [min 8.1s[2m (compile: 6.8s, render: 1303ms)[22m
+ POST /api/auth/signup [32m201 [min 911ms[2m (compile: 689ms, render: 222ms)[22m
+ POST /api/auth/signup [32m201 [min 42ms[2m (compile: 9ms, render: 33ms)[22m
+ POST /api/auth/signup [32m201 [min 36ms[2m (compile: 8ms, render: 27ms)[22m
+ GET /login?email=&password= [32m200 [min 338ms[2m (compile: 19ms, render: 319ms)[22m
+ GET /login?email=&password= [32m200 [min 340ms[2m (compile: 25ms, render: 315ms)[22m
+ GET /login [32m200 [min 301ms[2m (compile: 15ms, render: 286ms)[22m
+ GET / [32m200 [min 555ms[2m (compile: 35ms, render: 519ms)[22m
+ [37m[1m [m Reload env: .env.local
+ [37m[1m [m Reload env: .env.local
+ GET / [32m200 [min 2.8s[2m (compile: 1453ms, render: 1345ms)[22m
+ GET / [32m200 [min 560ms[2m (compile: 25ms, render: 536ms)[22m
+ [37m[1m [m Reload env: .env.local
+ GET / [32m200 [min 1058ms[2m (compile: 669ms, render: 389ms)[22m
+ [37m[1m [m Reload env: .env.local
+ GET / [32m200 [min 1898ms[2m (compile: 1323ms, render: 574ms)[22m
+ [37m[1m [m Reload env: .env.local
+ GET / [32m200 [min 3.0s[2m (compile: 1837ms, render: 1137ms)[22m
