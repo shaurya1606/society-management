@@ -1,105 +1,58 @@
-# PerformIQ — Deployment
+# Deployment Guide - Society Maintenance Tracker
 
-## Purpose
-
-Deploy a production instance for hackathon judging or staging.
-
-## Current state
-
-**Demo-ready** — `pnpm build` verified; no platform-specific config in repo (e.g. no `vercel.json` required for basic Vercel deploy).
+This document provides deployment guidelines for deploying a production instance of the Society Maintenance Tracker application.
 
 ---
 
-## Pre-deploy checklist
+## 1. Pre-deployment Checklist
 
-| Step | Status |
-|------|--------|
-| Set `DATABASE_URL` (production Neon DB) | Required |
-| Set `AUTH_SECRET` (unique per environment) | Required |
-| Set `NEXT_PUBLIC_APP_URL` to public URL | Required |
-| Run `pnpm drizzle:push` against prod DB | Required |
-| Run `pnpm seed:atomquest` (demo) or provision users | Recommended |
-| Configure OAuth redirect URLs if using OAuth | Optional |
-| Set `RESEND_API_KEY` for real email | Optional |
+Ensure the following tasks are completed before initiating the production build:
+
+| # | Task | Description | Status |
+|---|------|-------------|--------|
+| 1 | Database Provisioning | Set up a production PostgreSQL instance (e.g. Neon serverless). | Required |
+| 2 | Environment Configuration | Prepare production secrets (`AUTH_SECRET`, `DATABASE_URL`). | Required |
+| 3 | Middleware Config | Set `AUTH_TRUST_HOST=true` and `NEXT_PUBLIC_APP_URL` to the public address. | Required |
+| 4 | Database Migrations | Run `pnpm drizzle:push` or apply SQL migration scripts against the prod DB. | Required |
+| 5 | Provision Admins | Insert or signup initial administrative accounts. | Required |
 
 ---
 
-## Build & start
+## 2. Environment Variables
+
+Define these environment keys in your target hosting platform (e.g., Vercel, Netlify, or VPS):
+
+```env
+DATABASE_URL=postgresql://user:password@hostname/dbname?sslmode=require
+AUTH_SECRET=your-secure-auth-secret
+NEXT_PUBLIC_APP_URL=https://society-maintenance-tracker.vercel.app
+AUTH_TRUST_HOST=true
+```
+
+Do not commit these credentials to your public repository.
+
+---
+
+## 3. Build & Run
+
+Run these commands inside your build environment:
 
 ```bash
+# 1. Install dependencies
 pnpm install
+
+# 2. Compile and package the Next.js application
 pnpm build
+
+# 3. Start the production server
 pnpm start
 ```
 
-**Status:** **Implemented** — Next.js 16 production build includes API routes and `proxy.ts` middleware.
+*Note: The Next.js production build automatically compiles API routes and the custom authentication `proxy.ts` middleware.*
 
 ---
 
-## Environment (production)
+## 4. Platform Notes
 
-Same variables as [SETUP.md](./SETUP.md). Critical:
-
-```env
-DATABASE_URL=postgresql://...
-AUTH_SECRET=<strong-secret>
-NEXT_PUBLIC_APP_URL=https://your-domain.example
-```
-
-Do not commit `.env.local`.
-
----
-
-## Post-deploy verification
-
-| # | Test | Expected |
-|---|------|----------|
-| 1 | `GET /` | Landing page |
-| 2 | Login admin demo user | `/admin/atomquest`, charts populated |
-| 3 | Login manager | `/team`, reports listed |
-| 4 | Login employee | `/goals`, sheet loads |
-| 5 | Middleware | Employee cannot access `/admin/atomquest` (redirect) |
-| 6 | Export CSV | Download from admin overview |
-| 7 | OAuth (if configured) | Sign-in completes |
-
----
-
-## Platform notes
-
-| Platform | Notes |
-|----------|-------|
-| Vercel | Compatible; set env vars in dashboard; Neon serverless driver fits |
-| Node VPS | `pnpm build && pnpm start`; reverse proxy for HTTPS |
-
-**Status:** **Partial** — not tested on all platforms in CI.
-
----
-
-## Middleware in production
-
-`src/proxy.ts` runs on Edge-compatible Next.js middleware matcher:
-
-```ts
-matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)']
-```
-
-JWT role must propagate (see [AUTH_RBAC.md](./AUTH_RBAC.md)).
-
----
-
-## Limitations
-
-- No blue/green or migration automation documented in repo.
-- No health check endpoint.
-- Seed script not idempotent for all tables (audit duplicates possible).
-- CSV export uses Q1 period only.
-
----
-
-## Future enhancements
-
-- CI deploy pipeline
-- Staging + production DB separation
-- Secrets manager integration
-
-See [ROADMAP.md](./ROADMAP.md), [KNOWN_LIMITATIONS.md](./KNOWN_LIMITATIONS.md).
+* **Vercel**: Fully compatible out-of-the-box. Add variables in the Vercel dashboard. The Edge-runtime middleware and Neon Serverless driver resolve seamlessly.
+* **Self-hosted VPS**: Use `pm2` or a Docker container to run the compiled output. A reverse proxy (such as Nginx) should handle SSL encryption.

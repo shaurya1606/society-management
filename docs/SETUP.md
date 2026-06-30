@@ -1,114 +1,65 @@
-# PerformIQ — Local Setup
+# Local Setup - Society Maintenance Tracker
 
-## Purpose
-
-Run the application locally for development and demo rehearsal.
-
-## Current state
-
-**Implemented** — standard Next.js + Drizzle + Neon workflow.
+This document provides a guide to setting up and running the Society Maintenance Tracker application on your local machine.
 
 ---
 
-## Prerequisites
-
-| Requirement | Version |
-|-------------|---------|
-| Node.js | 20+ |
-| pnpm | Latest recommended |
-| PostgreSQL | Neon or compatible (connection string) |
+## 1. Prerequisites
+* **Node.js**: Version 20.x or higher
+* **Package Manager**: `pnpm` (or `npm`/`yarn`)
+* **Database**: PostgreSQL (Neon serverless or local PostgreSQL instance)
 
 ---
 
-## Installation
+## 2. Installation Steps
 
 ```bash
+# 1. Clone the repository
 git clone <repository-url>
-cd ignitia2k26
+cd society-maintenance-tracker
+
+# 2. Install dependencies
 pnpm install
 ```
 
 ---
 
-## Environment variables
+## 3. Environment Variables Setup
 
-Copy template:
-
+Copy the example template:
 ```bash
-cp .example.env .env.local
+cp .example.env .env
 ```
+Open `.env` and configure the following parameters:
 
-| Variable | Required | Status | Description |
-|----------|----------|--------|-------------|
-| `DATABASE_URL` | Yes | **Implemented** | PostgreSQL connection string |
-| `AUTH_SECRET` | Yes | **Implemented** | NextAuth secret (`openssl rand -base64 32`) |
-| `NEXT_PUBLIC_APP_URL` | Recommended | **Implemented** | Base URL for email links |
-| `AUTH_GITHUB_ID` / `AUTH_GITHUB_SECRET` | No | **Partial** | GitHub OAuth |
-| `AUTH_GOOGLE_ID` / `AUTH_GOOGLE_SECRET` | No | **Partial** | Google OAuth |
-| `RESEND_API_KEY` | No | **Partial** | Transactional email |
-| `ATOMQUEST_EMAIL_FROM` | No | **Partial** | From address (internal env name) |
-| `EMAIL_SERVICE` | No | **Partial** | Set to `1` to enforce verification + 2FA paths |
+* `DATABASE_URL`: Your PostgreSQL database connection string.
+* `AUTH_SECRET`: Secret token used to sign cookies. Generate a strong key using:
+  ```bash
+  openssl rand -base64 32
+  ```
 
 ---
 
-## Database
+## 4. Database Setup
+
+Drizzle ORM is used to sync schemas. Push the schema to your database:
 
 ```bash
 pnpm drizzle:push
-pnpm seed:atomquest
 ```
 
-**Status:** **Demo-ready** — seed creates users, cycles, sheets, check-ins, shared KPI.
-
 ---
 
-## Run
+## 5. Running the Application
 
-```bash
-pnpm dev
-```
+* **Development mode**:
+  ```bash
+  pnpm dev
+  ```
+  Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-Open [http://localhost:3000](http://localhost:3000).
-
----
-
-## Verify
-
-| Check | Expected |
-|-------|----------|
-| Landing loads | PerformIQ branding |
-| Login with `admin@atomquest.demo` | Redirect to `/admin/atomquest` |
-| Admin charts | Populated after seed |
-| `pnpm typecheck` | Passes |
-| `pnpm build` | Production build succeeds |
-
----
-
-## Scripts
-
-| Command | Purpose |
-|---------|---------|
-| `pnpm dev` | Development server |
-| `pnpm build` | Production build |
-| `pnpm start` | Run production build |
-| `pnpm typecheck` | TypeScript |
-| `pnpm lint` | ESLint |
-| `pnpm drizzle:push` | Push schema to DB |
-| `pnpm drizzle:generate` | Generate migrations |
-| `pnpm seed:atomquest` | Demo data |
-
----
-
-## Limitations
-
-- `pnpm test` is a placeholder (no automated tests).
-- `package.json` name is `letskraack.v1.0` (template artifact).
-
----
-
-## Future enhancements
-
-- Docker Compose for local Postgres
-- `.env` validation at startup (zod)
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md), [TESTING.md](./TESTING.md).
+* **Production mode**:
+  ```bash
+  pnpm build
+  pnpm start
+  ```

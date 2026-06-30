@@ -1,75 +1,71 @@
-# PerformIQ — Testing
+# Manual Testing Guide - Society Maintenance Tracker
 
-## Purpose
-
-Document test coverage, manual QA, and gaps.
-
-## Current state
-
-**Deferred** — no automated test suite in repository.
+This document provides a manual testing checklist and verification guide for the evaluator to validate the Society Maintenance Tracker application.
 
 ---
 
-## Automated tests
+## 1. Authentication & Role Scopes
 
-| Type | Status | Notes |
-|------|--------|-------|
-| Unit tests | **Deferred** | `pnpm test` → `echo No tests specified` |
-| Integration tests | **Deferred** | |
-| E2E (Playwright/Cypress) | **Deferred** | |
-| API contract tests | **Deferred** | |
-
----
-
-## Manual verification (implemented practice)
-
-Used for hackathon hardening:
-
-| Area | Method | Status |
-|------|--------|--------|
-| Type safety | `pnpm typecheck` | **Implemented** |
-| Lint | `pnpm lint` | **Implemented** |
-| Production build | `pnpm build` | **Implemented** |
-| Role routing | Manual login per role | **Demo-ready** |
-| Goal validation | Submit invalid weightage | **Demo-ready** |
-| Check-in lock | Save non-active quarter | **Demo-ready** |
+* [ ] **Pre-seeded Demo Accounts Login**:
+  * Navigate to the login page (`/login`).
+  * Verify you can click one-click fill buttons or enter the credentials manually.
+  * Verify successful login redirects to `/dashboard`.
+* [ ] **Navbar Layout Scoping**:
+  * Log in as a resident (Employee/User): Verify `My Complaints`, `New Complaint`, and `Notices` are visible. Verify `Admin Dashboard` and `Admin Complaints` links are **hidden**.
+  * Log in as an Admin: Verify `Admin Dashboard` and `Admin Complaints` links are **visible** alongside the general links.
 
 ---
 
-## Suggested manual test matrix
+## 2. Resident Flows
 
-| ID | Scenario | Role | Expected |
-|----|----------|------|----------|
-| T1 | Login credentials | Employee | `/goals` |
-| T2 | Submit without 100% weight | Employee | 400 error |
-| T3 | Approve non-submitted sheet | Manager | 400 error |
-| T4 | Check-in on DRAFT sheet | Employee | 403 |
-| T5 | Access `/admin/atomquest` | Employee | Redirect |
-| T6 | Admin export | Admin | CSV download |
-| T7 | Shared recipient edit title | Employee | Server preserves title |
-
----
-
-## Seed-dependent tests
-
-Run `pnpm seed:atomquest` before T4–T7 for locked sheets and charts.
+* [ ] **Create New Complaint (`/complaints/new`)**:
+  * Navigate to `/complaints/new` (or click "File a New Complaint" on the home dashboard).
+  * Leave required fields blank: Click Submit and verify form validation errors display.
+  * Fill in Title, Category (e.g. Plumbing), Description, and a mock Photo URL: Click Submit and verify the success notification displays.
+  * Verify the application redirects to `/complaints` after successful submission.
+* [ ] **View My Complaints (`/complaints`)**:
+  * Verify the newly created complaint appears at the top of the list.
+  * Check that details (Title, Category, Description, and Creation Date) are rendered correctly.
+  * Verify the status badge defaults to `OPEN` and priority badge defaults to `LOW`.
+  * Click on the "View Attachment File" link (if a photo URL was supplied) and verify it opens correctly.
 
 ---
 
-## Limitations
+## 3. Admin Flows
 
-- No CI gate on tests.
-- No coverage reporting.
-- Regression risk on middleware/RBAC changes without E2E.
+* [ ] **Admin Complaints Management (`/admin/complaints`)**:
+  * Log in as an Admin.
+  * Navigate to `/admin/complaints`. Verify you can see all complaints submitted in the system.
+  * Verify the filter controls (Status, Priority, Category keyword search, and Show Overdue First checkbox) fetch filtered lists dynamically on click.
+* [ ] **Transition Complaint Status**:
+  * On a complaint, select `IN_PROGRESS` or `RESOLVED` in the Status dropdown.
+  * Enter an optional update note (e.g., "Plumber scheduled for afternoon visit").
+  * Click the "Update" button under Update Status.
+  * Verify a success message displays, the complaint list refreshes, and the status badge updates.
+* [ ] **Update Complaint Priority**:
+  * On a complaint, select `HIGH` or `MEDIUM` in the Priority dropdown.
+  * Click the "Update" button under Update Priority.
+  * Verify a success message displays, the complaint list refreshes, and the priority badge updates.
+* [ ] **Admin Dashboard (`/admin/dashboard`)**:
+  * Navigate to `/admin/dashboard`.
+  * Verify the Stat Cards render counts for Overdue complaints, High Priority Open complaints, and total counts by status.
+  * Verify the category count breakdown aligns with actual complaints.
+  * Verify the "Latest Complaints Activity" list displays recent complaints with resident details (Resident Name, Resident Email, and Creation Date).
 
 ---
 
-## Future enhancements
+## 4. Notices & Announcements Flow
 
-| Item | Priority |
-|------|----------|
-| Playwright smoke: login + 3 role homes | High |
-| API tests for goal validation | Medium |
-| Visual regression (optional) | Low |
-
-See [ROADMAP.md](./ROADMAP.md).
+* [ ] **Read Notices (`/notices`)**:
+  * Navigate to `/notices`.
+  * Verify you can see society announcements.
+  * Check that notices marked as "Important" are pinned at the top and highlighted with a distinct amber border/badge.
+* [ ] **Publish New Notice (Admin Only)**:
+  * Log in as an Admin and navigate to `/notices`.
+  * Verify the "Publish New Notice" form is visible in the sidebar.
+  * Fill in Title, Body, and check "Mark as Important": Click "Publish Announcement".
+  * Verify the success message displays, the form clears, and the notice list refreshes automatically.
+  * Verify the new notice is pinned to the top of the list.
+* [ ] **Notice Security Scope (Non-Admin)**:
+  * Log in as a resident and navigate to `/notices`.
+  * Verify the "Publish New Notice" form is **completely hidden**.

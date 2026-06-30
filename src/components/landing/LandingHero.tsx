@@ -43,13 +43,13 @@ export function LandingHero({ isAuthenticated }: LandingHeroProps) {
                     {/* Category badge */}
                     <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 uppercase tracking-wide">
                         <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
-                        Enterprise HRTech · Performance Lifecycle Management
+                        Society Maintenance Tracker · Resident Complaint Platform
                     </p>
 
                     <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-tight">
-                        Structured goal-setting.{' '}
+                        Structured complaint tracking.{' '}
                         <span className="text-indigo-600">
-                            Measurable outcomes.
+                            Efficient resolutions.
                         </span>
                     </h1>
 
@@ -75,7 +75,7 @@ export function LandingHero({ isAuthenticated }: LandingHeroProps) {
                                     size="lg"
                                     className="h-11 min-w-[180px] bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium"
                                 >
-                                    <Link href="/signup">Request access</Link>
+                                    <Link href="/signup">Sign Up</Link>
                                 </Button>
                                 <Button
                                     asChild
@@ -83,7 +83,7 @@ export function LandingHero({ isAuthenticated }: LandingHeroProps) {
                                     variant="outline"
                                     className="h-11 min-w-[180px] border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium"
                                 >
-                                    <Link href="/login">Sign in</Link>
+                                    <Link href="/login">Login</Link>
                                 </Button>
                             </>
                         )}
@@ -91,8 +91,7 @@ export function LandingHero({ isAuthenticated }: LandingHeroProps) {
 
                     {/* Trust strip */}
                     <p className="mt-6 text-xs text-slate-400 font-medium">
-                        Role-based access · Manager approval workflow ·
-                        Quarterly check-ins · Audit trail
+                        Role-based access · Computed overdue SLA · Transactional status logs · Notices board
                     </p>
                 </motion.div>
 
@@ -106,23 +105,23 @@ export function LandingHero({ isAuthenticated }: LandingHeroProps) {
                     {[
                         {
                             icon: IconTarget,
-                            label: 'Goal Weightage',
-                            value: '100% validated',
+                            label: 'Complaint Lifecycle',
+                            value: 'OPEN to RESOLVED',
                         },
                         {
                             icon: IconChartBar,
-                            label: 'Quarterly tracking',
-                            value: 'Q1 – Q4',
+                            label: 'Dashboard Analytics',
+                            value: 'Real-time statistics',
                         },
                         {
                             icon: IconUsers,
-                            label: 'Manager workflow',
-                            value: 'Approve & lock',
+                            label: 'Admin Workflow',
+                            value: 'Priority & Status Notes',
                         },
                         {
                             icon: IconShield,
                             label: 'Governance',
-                            value: 'Full audit trail',
+                            value: 'Transactional logs',
                         },
                     ].map((stat) => (
                         <div

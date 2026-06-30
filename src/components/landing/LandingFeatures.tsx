@@ -10,39 +10,39 @@ import {
 const features = [
     {
         icon: IconClipboardCheck,
-        title: 'Structured goal sheets',
+        title: 'Resident Complaint Submission',
         description:
-            'Employees define thrust areas, targets, and weightage with built-in validation — 100% total, max 8 goals, minimum 10% each.',
-    },
-    {
-        icon: IconLock,
-        title: 'Manager approval workflow',
-        description:
-            'L1 managers review, edit inline, approve, or return for rework. Approved goals lock until admin unlock.',
+            'Residents can easily submit maintenance requests specifying the title, category, description, and optional photo reference URL.',
     },
     {
         icon: IconReportAnalytics,
-        title: 'Quarterly check-ins',
+        title: 'Complaint Status Tracking',
         description:
-            'Track planned vs actual each quarter with status updates, progress scores, and manager coaching notes.',
+            'Residents track their issues in real time through clear visual badges: OPEN, IN_PROGRESS, or RESOLVED, with resolution timestamps.',
+    },
+    {
+        icon: IconLock,
+        title: 'Admin Workflow Governance',
+        description:
+            'Admins transition status values while attaching transition notes, and update complaint urgency levels: LOW, MEDIUM, or HIGH.',
     },
     {
         icon: IconShare,
-        title: 'Shared departmental KPIs',
+        title: 'Notices Board Announcements',
         description:
-            'Push common goals across teams. Recipients adjust weightage while title and targets stay aligned org-wide.',
+            'Management can post circular announcements to all residents, pinning important updates at the top of the feed.',
     },
     {
         icon: IconShield,
-        title: 'Full audit trail',
+        title: 'Computed Overdue SLAs',
         description:
-            'Every approval, return, and edit is logged with actor, timestamp, and change detail for governance and compliance.',
+            'Complaints that exceed the threshold are flagged dynamically as overdue, helping administrators resolve critical items first.',
     },
     {
         icon: IconUsers,
-        title: 'Role-based access control',
+        title: 'Role-Based Access Control',
         description:
-            'Employees, managers, and HR admins each see only what they need — enforced at every API layer.',
+            'Residents and administrators each see only their authorized menus, fully enforced at the Page and API endpoint levels.',
     },
 ]
 
@@ -55,11 +55,10 @@ export function LandingFeatures() {
                         Platform capabilities
                     </p>
                     <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                        Built for the full performance lifecycle
+                        Comprehensive Complaint Tracking
                     </h2>
                     <p className="mt-4 text-slate-500 leading-relaxed">
-                        From May goal-setting through Q4 achievement capture — every step of the
-                        performance year, governed and auditable.
+                        A structured workflow designed to streamline society maintenance requests, improve accountability, and keep residents updated.
                     </p>
                 </div>
 
