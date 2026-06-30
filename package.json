@@ -16,7 +16,8 @@
         "drizzle:generate": "drizzle-kit generate --config ./drizzle.config.ts",
         "drizzle:migrate": "drizzle-kit migrate --config ./drizzle.config.ts",
         "drizzle:push": "drizzle-kit push --config ./drizzle.config.ts",
-        "seed:atomquest": "node scripts/seed-atomquest.mjs"
+        "seed:atomquest": "node scripts/seed-atomquest.mjs",
+        "seed:society": "node scripts/seed-society.mjs"
     },
     "dependencies": {
         "@auth/drizzle-adapter": "^1.11.1",

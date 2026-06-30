@@ -69,48 +69,44 @@ export default function VerifyEmailPage() {
     }
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100 px-4 dark:from-neutral-900 dark:to-neutral-950">
-            <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg dark:bg-black">
-                <div className="text-center">
-                    <h1 className="mb-4 text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-                        Email Verification
-                    </h1>
+        <div className="w-full text-center">
+            <h2 className="text-xl font-semibold text-slate-900 mb-6">
+                Email Verification
+            </h2>
 
-                    {loading && (
-                        <div className="my-8 flex justify-center">
-                            <div className="h-12 w-12 animate-spin rounded-full border-4 border-neutral-200 border-t-blue-600 dark:border-neutral-800 dark:border-t-blue-400" />
-                        </div>
-                    )}
-
-                    {!loading && (
-                        <div className="my-6">
-                            <FormError message={error} />
-                            <FormSuccess message={success} />
-                        </div>
-                    )}
-
-                    {!loading && error && (
-                        <div className="mt-4 flex flex-col gap-4">
-                            <Button
-                                onClick={handleResendEmail}
-                                disabled={resending}
-                                className="w-full"
-                            >
-                                {resending
-                                    ? 'Redirecting...'
-                                    : 'Request New Verification Email'}
-                            </Button>
-                            <Button
-                                onClick={() => router.push('/login')}
-                                variant="outline"
-                                className="w-full"
-                            >
-                                Back to Login
-                            </Button>
-                        </div>
-                    )}
+            {loading && (
+                <div className="my-8 flex justify-center">
+                    <div className="h-10 w-10 animate-spin rounded-full border-4 border-slate-200 border-t-indigo-600" />
                 </div>
-            </div>
+            )}
+
+            {!loading && (
+                <div className="my-6 text-left">
+                    <FormError message={error} />
+                    <FormSuccess message={success} />
+                </div>
+            )}
+
+            {!loading && error && (
+                <div className="mt-6 flex flex-col gap-3">
+                    <Button
+                        onClick={handleResendEmail}
+                        disabled={resending}
+                        className="w-full h-10 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium"
+                    >
+                        {resending
+                            ? 'Redirecting...'
+                            : 'Request New Verification Link'}
+                    </Button>
+                    <Button
+                        onClick={() => router.push('/login')}
+                        variant="outline"
+                        className="w-full h-10 border-slate-200 text-slate-700 text-sm font-medium animate-none"
+                    >
+                        Back to Login
+                    </Button>
+                </div>
+            )}
         </div>
     )
 }

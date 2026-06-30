@@ -8,10 +8,10 @@
 
 Pre-seeded accounts are available to log in instantly. The default credentials are:
 
-* **Password for all accounts:** `AtomQuest@123`
-* **Resident Demo 1 (Employee role):** `employee@atomquest.demo`
-* **Resident Demo 2 (Manager role):** `manager@atomquest.demo`
-* **Admin Demo (Admin role):** `admin@atomquest.demo`
+* **Admin Demo (Admin role):** `admin@societytrack.demo` (Password: `Admin@123`)
+* **Resident Demo 1 (Resident role):** `resident@societytrack.demo` (Password: `Resident@123`)
+* **Resident Demo 2 (Resident role):** `amit.resident@societytrack.demo` (Password: `Resident@123`)
+* **Resident Demo 3 (Resident role):** `priya.resident@societytrack.demo` (Password: `Resident@123`)
 
 ---
 
@@ -172,7 +172,10 @@ cp .example.env .env
 # 4. Push schema to database
 pnpm drizzle:push
 
-# 5. Start the development server
+# 5. Seed the society database (development database only)
+pnpm seed:society
+
+# 6. Start the development server
 pnpm dev
 ```
 
