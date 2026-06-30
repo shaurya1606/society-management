@@ -66,6 +66,18 @@ const Navbar = () => {
                         >
                             New Complaint
                         </Link>
+                        {session?.user?.role &&
+                            (session.user.role === 'ADMIN' ||
+                                session.user.role === 'SUPER_ADMIN') && (
+                                <Link
+                                    href="/admin/complaints"
+                                    className={navLinkClass(
+                                        pathname === '/admin/complaints'
+                                    )}
+                                >
+                                    Admin Complaints
+                                </Link>
+                            )}
                         <Link
                             href="/settings"
                             className={navLinkClass(pathname === '/settings')}
