@@ -26,7 +26,6 @@ const Navbar = () => {
         <nav className="w-full sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-14">
-
                     {/* Logo */}
                     <div className="flex items-center gap-3 min-w-0">
                         <Link
@@ -57,7 +56,9 @@ const Navbar = () => {
                         </Link>
                         <Link
                             href="/notifications"
-                            className={navLinkClass(pathname === '/notifications')}
+                            className={navLinkClass(
+                                pathname === '/notifications'
+                            )}
                         >
                             Notifications
                         </Link>
@@ -79,7 +80,6 @@ const Navbar = () => {
                             Sign out
                         </button>
                     </div>
-
                 </div>
             </div>
         </nav>

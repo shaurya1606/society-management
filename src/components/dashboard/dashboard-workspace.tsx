@@ -18,8 +18,8 @@ export function DashboardWorkspace() {
                     Setup in progress
                 </h2>
                 <p className="text-sm text-slate-600">
-                    The legacy workspace has been neutralized while the complaint-management
-                    domain is implemented.
+                    The legacy workspace has been neutralized while the
+                    complaint-management domain is implemented.
                 </p>
             </Card>
         </PageShell>
@@ -32,7 +32,9 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
             <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">
                 {label}
             </p>
-            <p className="mt-1 text-2xl font-semibold text-slate-900 tabular-nums">{value}</p>
+            <p className="mt-1 text-2xl font-semibold text-slate-900 tabular-nums">
+                {value}
+            </p>
         </div>
     )
 }

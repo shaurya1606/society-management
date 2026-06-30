@@ -54,8 +54,9 @@ export function LandingHero({ isAuthenticated }: LandingHeroProps) {
                     </h1>
 
                     <p className="mt-6 text-lg leading-relaxed text-slate-500 sm:text-xl max-w-2xl mx-auto">
-                        Society Maintenance Tracker gives residents and administrators a single
-                        system of record for complaints, status history, and resolution updates.
+                        Society Maintenance Tracker gives residents and
+                        administrators a single system of record for complaints,
+                        status history, and resolution updates.
                     </p>
 
                     <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -90,7 +91,8 @@ export function LandingHero({ isAuthenticated }: LandingHeroProps) {
 
                     {/* Trust strip */}
                     <p className="mt-6 text-xs text-slate-400 font-medium">
-                        Role-based access · Manager approval workflow · Quarterly check-ins · Audit trail
+                        Role-based access · Manager approval workflow ·
+                        Quarterly check-ins · Audit trail
                     </p>
                 </motion.div>
 
@@ -128,7 +130,9 @@ export function LandingHero({ isAuthenticated }: LandingHeroProps) {
                             className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm"
                         >
                             <stat.icon className="mx-auto mb-3 h-5 w-5 text-indigo-600" />
-                            <p className="text-xs text-slate-500 font-medium">{stat.label}</p>
+                            <p className="text-xs text-slate-500 font-medium">
+                                {stat.label}
+                            </p>
                             <p className="mt-1 text-sm font-semibold text-slate-900">
                                 {stat.value}
                             </p>

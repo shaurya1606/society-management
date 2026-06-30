@@ -15,8 +15,13 @@ export default function GlobalError({
     return (
         <html lang="en">
             <head>
-                <title>Something went wrong — Society Maintenance Tracker</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>
+                    Something went wrong — Society Maintenance Tracker
+                </title>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
                 <style>{`
                     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
                     body {
@@ -159,59 +164,180 @@ export default function GlobalError({
                 `}</style>
             </head>
             <body>
-                <div className="card" style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 16, boxShadow: '0 1px 3px rgba(0,0,0,0.06)', padding: '2.5rem 3rem', textAlign: 'center', maxWidth: 480, width: '100%' }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: '2rem' }}>
+                <div
+                    className="card"
+                    style={{
+                        background: '#fff',
+                        border: '1px solid #e2e8f0',
+                        borderRadius: 16,
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+                        padding: '2.5rem 3rem',
+                        textAlign: 'center',
+                        maxWidth: 480,
+                        width: '100%',
+                    }}
+                >
+                    <div
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: 8,
+                            marginBottom: '2rem',
+                        }}
+                    >
                         <img
                             src="/logo.jpg"
                             alt="Society Maintenance Tracker"
                             width={28}
                             height={28}
-                            style={{ borderRadius: 8, objectFit: 'contain', display: 'block' }}
+                            style={{
+                                borderRadius: 8,
+                                objectFit: 'contain',
+                                display: 'block',
+                            }}
                         />
-                        <span style={{ fontSize: 14, fontWeight: 600, color: '#0f172a' }}>Society Maintenance Tracker</span>
+                        <span
+                            style={{
+                                fontSize: 14,
+                                fontWeight: 600,
+                                color: '#0f172a',
+                            }}
+                        >
+                            Society Maintenance Tracker
+                        </span>
                     </div>
 
-                    <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 56, height: 56, borderRadius: '50%', background: '#fef2f2', border: '1px solid #fecaca', marginBottom: '1.5rem' }}>
-                        <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, stroke: '#dc2626', fill: 'none', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                    <div
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: 56,
+                            height: 56,
+                            borderRadius: '50%',
+                            background: '#fef2f2',
+                            border: '1px solid #fecaca',
+                            marginBottom: '1.5rem',
+                        }}
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            style={{
+                                width: 24,
+                                height: 24,
+                                stroke: '#dc2626',
+                                fill: 'none',
+                                strokeWidth: 2,
+                                strokeLinecap: 'round',
+                                strokeLinejoin: 'round',
+                            }}
+                        >
                             <circle cx="12" cy="12" r="10" />
                             <line x1="12" y1="8" x2="12" y2="12" />
                             <line x1="12" y1="16" x2="12.01" y2="16" />
                         </svg>
                     </div>
 
-                    <h1 style={{ fontSize: 18, fontWeight: 600, color: '#0f172a', marginBottom: '0.5rem' }}>
+                    <h1
+                        style={{
+                            fontSize: 18,
+                            fontWeight: 600,
+                            color: '#0f172a',
+                            marginBottom: '0.5rem',
+                        }}
+                    >
                         Something went wrong
                     </h1>
-                    <p style={{ fontSize: 14, color: '#64748b', lineHeight: 1.6, marginBottom: '0.75rem' }}>
-                        An unexpected error occurred in the application. The engineering team has been notified.
+                    <p
+                        style={{
+                            fontSize: 14,
+                            color: '#64748b',
+                            lineHeight: 1.6,
+                            marginBottom: '0.75rem',
+                        }}
+                    >
+                        An unexpected error occurred in the application. The
+                        engineering team has been notified.
                     </p>
 
                     {error.digest ? (
-                        <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: 11, color: '#94a3b8', background: '#f1f5f9', border: '1px solid #e2e8f0', borderRadius: 6, padding: '4px 10px', display: 'inline-block', marginBottom: '1.75rem' }}>
+                        <span
+                            style={{
+                                fontFamily: 'ui-monospace, monospace',
+                                fontSize: 11,
+                                color: '#94a3b8',
+                                background: '#f1f5f9',
+                                border: '1px solid #e2e8f0',
+                                borderRadius: 6,
+                                padding: '4px 10px',
+                                display: 'inline-block',
+                                marginBottom: '1.75rem',
+                            }}
+                        >
                             Error ID: {error.digest}
                         </span>
                     ) : (
                         <div style={{ marginBottom: '1.75rem' }} />
                     )}
 
-                    <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <div
+                        style={{
+                            display: 'flex',
+                            gap: 10,
+                            justifyContent: 'center',
+                            flexWrap: 'wrap',
+                        }}
+                    >
                         <button
                             onClick={() => reset()}
-                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: 38, padding: '0 20px', borderRadius: 8, background: '#4f46e5', color: '#fff', fontSize: 13, fontWeight: 600, border: 'none', cursor: 'pointer' }}
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                height: 38,
+                                padding: '0 20px',
+                                borderRadius: 8,
+                                background: '#4f46e5',
+                                color: '#fff',
+                                fontSize: 13,
+                                fontWeight: 600,
+                                border: 'none',
+                                cursor: 'pointer',
+                            }}
                         >
                             Try again
                         </button>
                         <Link
                             href="/"
-                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: 38, padding: '0 20px', borderRadius: 8, background: '#fff', color: '#475569', fontSize: 13, fontWeight: 500, border: '1px solid #e2e8f0', textDecoration: 'none' }}
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                height: 38,
+                                padding: '0 20px',
+                                borderRadius: 8,
+                                background: '#fff',
+                                color: '#475569',
+                                fontSize: 13,
+                                fontWeight: 500,
+                                border: '1px solid #e2e8f0',
+                                textDecoration: 'none',
+                            }}
                         >
                             Go home
                         </Link>
                     </div>
 
-                    <div style={{ height: 1, background: '#f1f5f9', margin: '1.75rem 0' }} />
+                    <div
+                        style={{
+                            height: 1,
+                            background: '#f1f5f9',
+                            margin: '1.75rem 0',
+                        }}
+                    />
                     <p style={{ fontSize: 12, color: '#94a3b8', margin: 0 }}>
-                        Society Maintenance Tracker · Resident complaint tracking
+                        Society Maintenance Tracker · Resident complaint
+                        tracking
                     </p>
                 </div>
             </body>

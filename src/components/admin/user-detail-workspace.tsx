@@ -75,11 +75,15 @@ export function UserDetailWorkspace({ userId }: Props) {
             ) : (
                 <div className="space-y-4">
                     <Card>
-                        <h2 className="text-sm font-semibold text-slate-900 mb-3">Role</h2>
+                        <h2 className="text-sm font-semibold text-slate-900 mb-3">
+                            Role
+                        </h2>
                         <div className="flex flex-wrap items-center gap-3">
                             <select
                                 value={role}
-                                onChange={(e) => setRole(e.target.value as UserRole)}
+                                onChange={(e) =>
+                                    setRole(e.target.value as UserRole)
+                                }
                                 className="rounded-md border border-slate-200 px-3 py-2 text-sm"
                             >
                                 {[
@@ -110,13 +114,17 @@ export function UserDetailWorkspace({ userId }: Props) {
                             Recent audit
                         </h2>
                         <ul className="text-sm text-slate-600 space-y-1">
-                            {((data?.audit as { action: string; createdAt: Date }[]) ?? []).map(
-                                (a, i) => (
-                                    <li key={i}>
-                                        {a.action} · {new Date(a.createdAt).toLocaleString()}
-                                    </li>
-                                )
-                            )}
+                            {(
+                                (data?.audit as {
+                                    action: string
+                                    createdAt: Date
+                                }[]) ?? []
+                            ).map((a, i) => (
+                                <li key={i}>
+                                    {a.action} ·{' '}
+                                    {new Date(a.createdAt).toLocaleString()}
+                                </li>
+                            ))}
                         </ul>
                     </Card>
                 </div>
@@ -124,4 +132,3 @@ export function UserDetailWorkspace({ userId }: Props) {
         </PageShell>
     )
 }
-

@@ -27,10 +27,16 @@ export function LandingHeader({ isAuthenticated }: LandingHeaderProps) {
 
                 {/* Nav */}
                 <nav className="hidden items-center gap-6 text-sm text-slate-500 md:flex">
-                    <a href="#features" className="transition hover:text-slate-900">
+                    <a
+                        href="#features"
+                        className="transition hover:text-slate-900"
+                    >
                         Features
                     </a>
-                    <a href="#how-it-works" className="transition hover:text-slate-900">
+                    <a
+                        href="#how-it-works"
+                        className="transition hover:text-slate-900"
+                    >
                         How it works
                     </a>
                 </nav>

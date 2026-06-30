@@ -50,27 +50,46 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
                             Enterprise HRTech
                         </p>
                         <h2 className="text-3xl font-bold text-white leading-snug">
-                            Performance lifecycle management for modern organisations
+                            Performance lifecycle management for modern
+                            organisations
                         </h2>
                         <p className="mt-4 text-indigo-200 text-sm leading-relaxed">
-                            Structured goal-setting, manager approval workflows, quarterly check-ins,
-                            and full audit trail — all in one governed platform.
+                            Structured goal-setting, manager approval workflows,
+                            quarterly check-ins, and full audit trail — all in
+                            one governed platform.
                         </p>
                     </div>
 
                     {/* Feature list */}
                     <div className="space-y-3 pt-2">
                         {[
-                            { icon: IconTarget, text: 'Annual KPI goal-setting with weightage validation' },
-                            { icon: IconChartBar, text: 'Q1–Q4 check-in tracking with progress scores' },
-                            { icon: IconUsers, text: 'Manager approval & inline review workflow' },
-                            { icon: IconShieldCheck, text: 'Role-based access · Full audit trail' },
+                            {
+                                icon: IconTarget,
+                                text: 'Annual KPI goal-setting with weightage validation',
+                            },
+                            {
+                                icon: IconChartBar,
+                                text: 'Q1–Q4 check-in tracking with progress scores',
+                            },
+                            {
+                                icon: IconUsers,
+                                text: 'Manager approval & inline review workflow',
+                            },
+                            {
+                                icon: IconShieldCheck,
+                                text: 'Role-based access · Full audit trail',
+                            },
                         ].map((item) => (
-                            <div key={item.text} className="flex items-start gap-3">
+                            <div
+                                key={item.text}
+                                className="flex items-start gap-3"
+                            >
                                 <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white/15">
                                     <item.icon className="h-3.5 w-3.5 text-white" />
                                 </div>
-                                <p className="text-sm text-indigo-100">{item.text}</p>
+                                <p className="text-sm text-indigo-100">
+                                    {item.text}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -79,7 +98,8 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
                 {/* Footer */}
                 <div className="relative">
                     <p className="text-xs text-indigo-400">
-                        © {new Date().getFullYear()} Society Maintenance Tracker · Resident complaint platform
+                        © {new Date().getFullYear()} Society Maintenance Tracker
+                        · Resident complaint platform
                     </p>
                 </div>
             </div>
@@ -103,9 +123,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
                     </Link>
                 </div>
 
-                <div className="w-full max-w-md">
-                    {children}
-                </div>
+                <div className="w-full max-w-md">{children}</div>
             </div>
         </div>
     )

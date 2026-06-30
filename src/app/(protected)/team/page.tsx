@@ -8,7 +8,8 @@ export default function TeamPage() {
         >
             <Card>
                 <p className="text-sm text-slate-600">
-                    The team review workspace has been retired for this cleanup phase.
+                    The team review workspace has been retired for this cleanup
+                    phase.
                 </p>
             </Card>
         </PageShell>

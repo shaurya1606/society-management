@@ -20,7 +20,6 @@ export default function GlobalNotFound() {
     return (
         <html lang="en" className={poppins.variable}>
             <body className="font-[family-name:var(--font-poppins)] antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col items-center justify-center px-4 py-16">
-
                 {/* Society Maintenance Tracker logo */}
                 <Link href="/" className="flex items-center gap-2 mb-12">
                     <Image
@@ -38,7 +37,6 @@ export default function GlobalNotFound() {
 
                 {/* Main card */}
                 <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white px-10 py-12 text-center shadow-sm">
-
                     {/* 404 badge */}
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-50 border border-indigo-100 mb-6">
                         <span className="text-2xl font-bold text-indigo-600 leading-none">
@@ -50,8 +48,8 @@ export default function GlobalNotFound() {
                         Page not found
                     </h1>
                     <p className="text-sm text-slate-500 leading-relaxed mb-8 max-w-xs mx-auto">
-                        The page you&apos;re looking for doesn&apos;t exist or has been moved.
-                        Check the URL or navigate back.
+                        The page you&apos;re looking for doesn&apos;t exist or
+                        has been moved. Check the URL or navigate back.
                     </p>
 
                     {/* Actions */}
@@ -73,9 +71,9 @@ export default function GlobalNotFound() {
 
                 {/* Help text */}
                 <p className="mt-8 text-xs text-slate-400">
-                    If you believe this is an error, please contact your administrator.
+                    If you believe this is an error, please contact your
+                    administrator.
                 </p>
-
             </body>
         </html>
     )

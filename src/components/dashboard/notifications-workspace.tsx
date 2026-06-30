@@ -8,10 +8,10 @@ export function NotificationsWorkspace() {
         >
             <Card>
                 <p className="text-sm text-slate-500">
-                    This area is reserved for future complaint status updates and reminders.
+                    This area is reserved for future complaint status updates
+                    and reminders.
                 </p>
             </Card>
         </PageShell>
     )
 }
-

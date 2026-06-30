@@ -8,7 +8,8 @@ export default async function AdminAtomquestPage() {
         >
             <Card>
                 <p className="text-sm text-slate-600">
-                    The legacy admin workspace is intentionally inactive for this phase.
+                    The legacy admin workspace is intentionally inactive for
+                    this phase.
                 </p>
             </Card>
         </PageShell>

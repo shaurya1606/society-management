@@ -40,7 +40,8 @@ export function LandingHowItWorks() {
                         How it works
                     </h2>
                     <p className="mx-auto mt-4 max-w-xl text-slate-500 leading-relaxed">
-                        A clear workflow for residents and admins across the complaint lifecycle.
+                        A clear workflow for residents and admins across the
+                        complaint lifecycle.
                     </p>
                 </div>
 
@@ -77,9 +78,10 @@ export function LandingHowItWorks() {
                         Bring structure to your performance process
                     </h3>
                     <p className="mt-3 text-slate-500 max-w-xl mx-auto text-sm leading-relaxed">
-                        Society Maintenance Tracker provides the workflow layer your housing team
-                        needs — from complaint intake to resolution and important notices, all in one
-                        auditable platform.
+                        Society Maintenance Tracker provides the workflow layer
+                        your housing team needs — from complaint intake to
+                        resolution and important notices, all in one auditable
+                        platform.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                         <a

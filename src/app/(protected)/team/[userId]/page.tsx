@@ -13,7 +13,8 @@ export default async function TeamMemberPage({ params }: PageProps) {
         >
             <Card>
                 <p className="text-sm text-slate-600">
-                    Legacy member workspace for {userId} has been disabled during cleanup.
+                    Legacy member workspace for {userId} has been disabled
+                    during cleanup.
                 </p>
             </Card>
         </PageShell>
