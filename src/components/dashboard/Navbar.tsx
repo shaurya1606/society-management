@@ -55,13 +55,45 @@ const Navbar = () => {
                             Dashboard
                         </Link>
                         <Link
-                            href="/notifications"
-                            className={navLinkClass(
-                                pathname === '/notifications'
-                            )}
+                            href="/complaints"
+                            className={navLinkClass(pathname === '/complaints')}
                         >
-                            Notifications
+                            My Complaints
                         </Link>
+                        <Link
+                            href="/complaints/new"
+                            className={navLinkClass(pathname === '/complaints/new')}
+                        >
+                            New Complaint
+                        </Link>
+                        <Link
+                            href="/notices"
+                            className={navLinkClass(pathname === '/notices')}
+                        >
+                            Notices
+                        </Link>
+                        {session?.user?.role &&
+                            (session.user.role === 'ADMIN' ||
+                                session.user.role === 'SUPER_ADMIN') && (
+                                <>
+                                    <Link
+                                        href="/admin/dashboard"
+                                        className={navLinkClass(
+                                            pathname === '/admin/dashboard'
+                                        )}
+                                    >
+                                        Admin Dashboard
+                                    </Link>
+                                    <Link
+                                        href="/admin/complaints"
+                                        className={navLinkClass(
+                                            pathname === '/admin/complaints'
+                                        )}
+                                    >
+                                        Admin Complaints
+                                    </Link>
+                                </>
+                            )}
                         <Link
                             href="/settings"
                             className={navLinkClass(pathname === '/settings')}
