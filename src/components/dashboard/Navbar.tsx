@@ -66,17 +66,33 @@ const Navbar = () => {
                         >
                             New Complaint
                         </Link>
+                        <Link
+                            href="/notices"
+                            className={navLinkClass(pathname === '/notices')}
+                        >
+                            Notices
+                        </Link>
                         {session?.user?.role &&
                             (session.user.role === 'ADMIN' ||
                                 session.user.role === 'SUPER_ADMIN') && (
-                                <Link
-                                    href="/admin/complaints"
-                                    className={navLinkClass(
-                                        pathname === '/admin/complaints'
-                                    )}
-                                >
-                                    Admin Complaints
-                                </Link>
+                                <>
+                                    <Link
+                                        href="/admin/dashboard"
+                                        className={navLinkClass(
+                                            pathname === '/admin/dashboard'
+                                        )}
+                                    >
+                                        Admin Dashboard
+                                    </Link>
+                                    <Link
+                                        href="/admin/complaints"
+                                        className={navLinkClass(
+                                            pathname === '/admin/complaints'
+                                        )}
+                                    >
+                                        Admin Complaints
+                                    </Link>
+                                </>
                             )}
                         <Link
                             href="/settings"
