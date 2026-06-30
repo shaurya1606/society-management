@@ -21,7 +21,7 @@ const steps = [
         step: '04',
         title: 'Notices and alerts',
         description:
-            'Admins post important notices, and residents receive email updates when complaints change or new notices are pinned.',
+            'Admins post important notices, and residents can read pinned critical updates on the Notices Board.',
     },
 ]
 
@@ -75,7 +75,7 @@ export function LandingHowItWorks() {
                         Ready to get started?
                     </p>
                     <h3 className="text-2xl font-bold text-slate-900">
-                        Bring structure to your performance process
+                        Bring structure to your society management
                     </h3>
                     <p className="mt-3 text-slate-500 max-w-xl mx-auto text-sm leading-relaxed">
                         Society Maintenance Tracker provides the workflow layer
@@ -88,13 +88,13 @@ export function LandingHowItWorks() {
                             href="/signup"
                             className="inline-flex h-10 items-center justify-center rounded-lg bg-indigo-600 px-6 text-sm font-semibold text-white hover:bg-indigo-700 transition-colors"
                         >
-                            Request access
+                            Sign Up
                         </a>
                         <a
                             href="/login"
                             className="inline-flex h-10 items-center justify-center rounded-lg border border-slate-200 bg-white px-6 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                         >
-                            Sign in
+                            Login
                         </a>
                     </div>
                 </div>

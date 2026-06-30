@@ -4,8 +4,8 @@ import { LoginForm } from '@/components/auth/LoginForm'
 export default function LogInPage() {
     return (
         <LoginForm
-            title="Welcome back"
-            subtitle="Sign in to your Society Maintenance Tracker account"
+            title="Sign in to Society Maintenance Tracker"
+            subtitle="Access your complaints, notices, and admin workflows."
             buttonLabel="Sign in"
             buttonHref="/dashboard"
         />

@@ -47,16 +47,13 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
                 <div className="relative space-y-6">
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-widest text-indigo-300 mb-3">
-                            Enterprise HRTech
+                            Resident complaint tracking platform
                         </p>
                         <h2 className="text-3xl font-bold text-white leading-snug">
-                            Performance lifecycle management for modern
-                            organisations
+                            Centralized complaint and maintenance tracking
                         </h2>
                         <p className="mt-4 text-indigo-200 text-sm leading-relaxed">
-                            Structured goal-setting, manager approval workflows,
-                            quarterly check-ins, and full audit trail — all in
-                            one governed platform.
+                            Raise complaints as a resident, follow status history, view announcements, and let admins coordinate task priorities and dashboard metrics.
                         </p>
                     </div>
 
@@ -65,19 +62,19 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
                         {[
                             {
                                 icon: IconTarget,
-                                text: 'Annual KPI goal-setting with weightage validation',
+                                text: 'Submit complaints with descriptions and photo links',
                             },
                             {
                                 icon: IconChartBar,
-                                text: 'Q1–Q4 check-in tracking with progress scores',
+                                text: 'Real-time status tracking (OPEN, IN_PROGRESS, RESOLVED)',
                             },
                             {
                                 icon: IconUsers,
-                                text: 'Manager approval & inline review workflow',
+                                text: 'Admin management for ticket priority and update notes',
                             },
                             {
                                 icon: IconShieldCheck,
-                                text: 'Role-based access · Full audit trail',
+                                text: 'Pin important announcements on the notices board',
                             },
                         ].map((item) => (
                             <div

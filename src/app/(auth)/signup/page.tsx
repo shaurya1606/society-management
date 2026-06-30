@@ -5,7 +5,7 @@ const SignUpPage = () => {
     return (
         <SignupForm
             title="Create your account"
-            subtitle="Join Society Maintenance Tracker to raise and track complaints"
+            subtitle="Register to raise and track maintenance complaints."
             buttonLabel="Create account"
             buttonHref="/dashboard"
         />
