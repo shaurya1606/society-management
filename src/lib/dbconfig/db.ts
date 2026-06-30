@@ -2,6 +2,7 @@ import { drizzle } from 'drizzle-orm/neon-http'
 import { neon } from '@neondatabase/serverless'
 import * as authSchema from './schema'
 import * as atomquestSchema from './atomquest'
+import * as societySchema from './society'
 
 function createDb() {
     if (!process.env.DATABASE_URL) {
@@ -10,7 +11,7 @@ function createDb() {
     const pg = neon(process.env.DATABASE_URL)
     return drizzle({
         client: pg,
-        schema: { ...authSchema, ...atomquestSchema },
+        schema: { ...authSchema, ...atomquestSchema, ...societySchema },
     })
 }
 

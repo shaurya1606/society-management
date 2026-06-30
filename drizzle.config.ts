@@ -7,6 +7,7 @@ export default defineConfig({
     schema: [
         './src/lib/dbconfig/schema.ts',
         './src/lib/dbconfig/atomquest.ts',
+        './src/lib/dbconfig/society.ts',
     ],
     out: './drizzle',
     dialect: 'postgresql',

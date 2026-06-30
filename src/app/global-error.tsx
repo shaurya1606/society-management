@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 // global-error must include html and body tags — it replaces the entire root layout
 
 import Link from 'next/link'
@@ -185,7 +186,7 @@ export default function GlobalError({
                             marginBottom: '2rem',
                         }}
                     >
-                        <img
+                        <Image
                             src="/logo.jpg"
                             alt="Society Maintenance Tracker"
                             width={28}
