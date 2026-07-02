@@ -1,8 +1,7 @@
 import authConfig from '@/auth.config'
 import NextAuth from 'next-auth'
 import { UserRole } from '@/lib/dbconfig/schema'
-import { atomquestRouteGuard } from '@/lib/atomquest/guard'
-import { isAdminRole, isManagerRole } from '@/lib/atomquest/roles'
+import { isAdminRole } from '@/lib/auth/roles'
 import {
     DEFAULT_LOGIN_REDIRECT,
     apiAuthPrefix,
@@ -15,8 +14,7 @@ const { auth } = NextAuth({
     ...authConfig,
     callbacks: {
         // Middleware uses this instance (not auth.ts). Map role from JWT so
-        // atomquestRouteGuard sees the real role — otherwise it defaults to EMPLOYEE
-        // and redirects /team and /admin/atomquest to /goals.
+        // route guard sees the real role — otherwise it defaults to EMPLOYEE.
         jwt({ token }) {
             return token
         },
@@ -35,13 +33,9 @@ const rbacRouteGuard = (
     role: UserRole | undefined,
     nextUrl: URL
 ) => {
-    const isEmployeeRoute =
-        pathname === '/employee' || pathname.startsWith('/employee/')
-    const isManagerRoute =
-        pathname === '/manager' || pathname.startsWith('/manager/')
     const isAdminRoute = pathname === '/admin' || pathname.startsWith('/admin/')
 
-    if (!isEmployeeRoute && !isManagerRoute && !isAdminRoute) {
+    if (!isAdminRoute) {
         return null
     }
 
@@ -53,10 +47,6 @@ const rbacRouteGuard = (
     const resolvedRole = role ?? UserRole.EMPLOYEE
 
     if (isAdminRoute && !isAdminRole(resolvedRole)) {
-        return Response.redirect(fallbackUrl)
-    }
-
-    if (isManagerRoute && !(isManagerRole(resolvedRole) || isAdminRole(resolvedRole))) {
         return Response.redirect(fallbackUrl)
     }
 
@@ -103,9 +93,6 @@ export default auth((req) => {
     if (isLoggedIn) {
         const rbacRedirect = rbacRouteGuard(nextUrl.pathname, role, nextUrl)
         if (rbacRedirect) return rbacRedirect
-
-        const atomquestRedirect = atomquestRouteGuard(req, role)
-        if (atomquestRedirect) return atomquestRedirect
     }
 
     return null

@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server'
 import { auth } from '@/auth'
-import { handleApiError, jsonError, jsonOk } from '@/lib/atomquest/api'
+import { handleApiError, jsonError, jsonOk } from '@/lib/api/response'
 import { UserRole } from '@/lib/dbconfig/schema'
 import { getComplaintById } from '@/lib/queries/society/complaints'
 import { transitionComplaintStatus } from '@/services/society/status-history'

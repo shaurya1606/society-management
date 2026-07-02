@@ -24,7 +24,7 @@ import axios from 'axios'
 import { signIn } from 'next-auth/react'
 import { DEFAULT_LOGIN_REDIRECT } from '@/route'
 import { useSearchParams } from 'next/navigation'
-import { DEMO_ACCOUNTS, DEMO_PASSWORD } from '@/lib/atomquest/demo-accounts'
+import { DEMO_ACCOUNTS } from '@/lib/demo-accounts'
 
 
 interface LoginFormProps {
@@ -182,7 +182,7 @@ export function LoginForm({
             {/* Demo accounts */}
             <div className="mb-6 rounded-lg border border-slate-200 bg-slate-50 p-3">
                 <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2.5">
-                    Demo accounts · password: {DEMO_PASSWORD}
+                    Demo accounts · Click to auto-fill
                 </p>
                 <ul className="space-y-1.5">
                     {DEMO_ACCOUNTS.map((account) => (
@@ -192,7 +192,7 @@ export function LoginForm({
                                 disabled={isPending}
                                 onClick={() => {
                                     form.setValue('email', account.email)
-                                    form.setValue('password', DEMO_PASSWORD)
+                                    form.setValue('password', account.password)
                                     setError('')
                                 }}
                                 className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-left text-xs transition hover:border-indigo-300 hover:bg-indigo-50 disabled:opacity-50 group"
@@ -201,7 +201,7 @@ export function LoginForm({
                                     {account.role}
                                 </span>
                                 <span className="block text-slate-500 truncate mt-0.5">
-                                    {account.email}
+                                    {account.email} · password: {account.password}
                                 </span>
                                 <span className="block text-slate-400 mt-0.5 text-[11px]">
                                     {account.hint}
