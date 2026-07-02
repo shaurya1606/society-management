@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-    title: 'Terms of Service — PerformIQ',
-    description: 'Terms of Service for the PerformIQ performance management platform.',
+    title: 'Terms of Service — Society Maintenance Tracker',
+    description: 'Terms of Service for the Society Maintenance Tracker platform.',
 }
 
 export default function TermsPage() {
@@ -17,13 +17,13 @@ export default function TermsPage() {
                     <Link href="/" className="flex items-center gap-2">
                         <Image
                             src="/logo.jpg"
-                            alt="PerformIQ"
+                            alt="Society Maintenance Tracker"
                             width={26}
                             height={26}
                             className="rounded-md object-contain"
                         />
                         <span className="text-sm font-semibold tracking-tight text-slate-900">
-                            PerformIQ
+                            Society Maintenance Tracker
                         </span>
                     </Link>
                     <span className="text-xs text-slate-400 font-medium">
@@ -54,7 +54,7 @@ export default function TermsPage() {
                             Demo Application — Not a real legal document
                         </p>
                         <p className="mt-1 text-sm text-amber-700 leading-relaxed">
-                            PerformIQ is a hackathon demonstration project built for{' '}
+                            Society Maintenance Tracker is a hackathon demonstration project built for{' '}
                             <strong>Ignitia 2K26</strong>. These Terms of Service are fictitious
                             and for presentation purposes only. They have no legal standing and
                             do not constitute a binding agreement of any kind.
@@ -81,10 +81,10 @@ export default function TermsPage() {
                                 1. Acceptance of Terms
                             </h2>
                             <p>
-                                By accessing or using the PerformIQ platform (&quot;Service&quot;), you agree
+                                By accessing or using the Society Maintenance Tracker platform (&quot;Service&quot;), you agree
                                 to be bound by these Terms of Service. If you do not agree to these terms,
                                 you may not use the Service. These terms apply to all users, including
-                                employees, managers, and administrators.
+                                residents and administrators.
                             </p>
                         </section>
 
@@ -93,10 +93,10 @@ export default function TermsPage() {
                                 2. Description of Service
                             </h2>
                             <p>
-                                PerformIQ is an enterprise performance lifecycle management platform that
-                                provides structured goal-setting, KPI governance, quarterly check-ins,
-                                and manager approval workflows for organisations. The Service is provided
-                                on an &quot;as-is&quot; basis for demonstration and evaluation purposes.
+                                Society Maintenance Tracker is a housing society operations management platform that
+                                provides structured complaint filing, notice broadcasts, and administrator status updates
+                                for housing societies. The Service is provided on an &quot;as-is&quot; basis for
+                                demonstration and evaluation purposes.
                             </p>
                         </section>
 
@@ -110,16 +110,12 @@ export default function TermsPage() {
                             </p>
                             <ul className="list-disc pl-5 space-y-2">
                                 <li>
-                                    <strong>Employee</strong> — May submit goal sheets, enter actuals
-                                    during check-in windows, and view their own performance data.
+                                    <strong>Resident</strong> — May submit maintenance complaints, upload or link photo URLs,
+                                    track complaint progress, and view society announcements.
                                 </li>
                                 <li>
-                                    <strong>Manager</strong> — May review and approve or return
-                                    subordinate goal sheets, provide feedback, and view team performance.
-                                </li>
-                                <li>
-                                    <strong>Administrator</strong> — May configure shared KPIs, manage
-                                    users, view organisation-wide analytics, and export reports.
+                                    <strong>Administrator</strong> — May update complaint status and priority levels, manage
+                                    society notices, view community metrics, and review status logs.
                                 </li>
                             </ul>
                             <p className="mt-3">
@@ -136,11 +132,11 @@ export default function TermsPage() {
                                 You agree not to use the Service to:
                             </p>
                             <ul className="list-disc pl-5 space-y-2">
-                                <li>Enter false, misleading, or fraudulent performance data.</li>
+                                <li>Enter false, misleading, or fraudulent complaint details.</li>
                                 <li>Attempt to gain unauthorised access to other user accounts or data.</li>
-                                <li>Circumvent or tamper with approval workflows or audit trails.</li>
+                                <li>Circumvent or tamper with status logs or administrative workflows.</li>
                                 <li>Use the Service for any unlawful purpose.</li>
-                            </ul>
+                             </ul>
                         </section>
 
                         <section>
@@ -157,10 +153,9 @@ export default function TermsPage() {
                                 >
                                     Privacy Policy
                                 </Link>
-                                , which is incorporated into these Terms by reference. Performance data,
-                                goal records, and check-in history are stored and associated with your
-                                account. Administrators may access aggregate organisation data for
-                                reporting purposes.
+                                , which is incorporated into these Terms by reference. Complaint data,
+                                resident account details, notice board entries, uploaded/linked photo URL data, and status history logs are stored and associated with your
+                                account. Administrators may access society-wide reports for maintenance purposes.
                             </p>
                         </section>
 
@@ -170,9 +165,9 @@ export default function TermsPage() {
                             </h2>
                             <p>
                                 The Service and all associated content, branding, and technology are the
-                                property of the PerformIQ development team. You are granted a limited,
+                                property of the Society Maintenance Tracker development team. You are granted a limited,
                                 non-exclusive, non-transferable licence to use the Service solely for
-                                your organisation&apos;s internal performance management purposes.
+                                your housing society&apos;s maintenance management purposes.
                             </p>
                         </section>
 
@@ -185,7 +180,7 @@ export default function TermsPage() {
                                 express or implied. We do not guarantee uninterrupted, error-free operation.
                             </p>
                             <p>
-                                To the maximum extent permitted by law, PerformIQ and its developers
+                                To the maximum extent permitted by law, Society Maintenance Tracker and its developers
                                 shall not be liable for any indirect, incidental, special, or
                                 consequential damages arising from your use of the Service.
                             </p>
@@ -217,8 +212,8 @@ export default function TermsPage() {
                                 10. Contact
                             </h2>
                             <p>
-                                For questions regarding these Terms, please contact the PerformIQ team
-                                through your organisation&apos;s HR administrator or system contact.
+                                For questions regarding these Terms, please contact the Society Maintenance Tracker team
+                                through your housing society administrator or system contact.
                             </p>
                         </section>
 
@@ -227,7 +222,7 @@ export default function TermsPage() {
                     {/* Footer rule */}
                     <div className="mt-10 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <p className="text-xs text-slate-400">
-                            © 2026 PerformIQ · For demonstration purposes only
+                            © 2026 Society Maintenance Tracker · For demonstration purposes only
                         </p>
                         <Link
                             href="/privacy"

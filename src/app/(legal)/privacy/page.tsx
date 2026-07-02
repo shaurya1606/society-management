@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy — PerformIQ',
-    description: 'Privacy Policy for the PerformIQ performance management platform.',
+    title: 'Privacy Policy — Society Maintenance Tracker',
+    description: 'Privacy Policy for the Society Maintenance Tracker platform.',
 }
 
 export default function PrivacyPage() {
@@ -17,13 +17,13 @@ export default function PrivacyPage() {
                     <Link href="/" className="flex items-center gap-2">
                         <Image
                             src="/logo.jpg"
-                            alt="PerformIQ"
+                            alt="Society Maintenance Tracker"
                             width={26}
                             height={26}
                             className="rounded-md object-contain"
                         />
                         <span className="text-sm font-semibold tracking-tight text-slate-900">
-                            PerformIQ
+                            Society Maintenance Tracker
                         </span>
                     </Link>
                     <span className="text-xs text-slate-400 font-medium">
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
                             Demo Application — Not a real legal document
                         </p>
                         <p className="mt-1 text-sm text-amber-700 leading-relaxed">
-                            PerformIQ is a hackathon demonstration project built for{' '}
+                            Society Maintenance Tracker is a hackathon demonstration project built for{' '}
                             <strong>Ignitia 2K26</strong>. This Privacy Policy is fictitious and
                             for presentation purposes only. No real user data is collected,
                             processed, or shared in any production capacity.
@@ -81,7 +81,7 @@ export default function PrivacyPage() {
                                 1. Introduction
                             </h2>
                             <p>
-                                PerformIQ (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is committed to protecting the privacy
+                                Society Maintenance Tracker (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is committed to protecting the privacy
                                 and security of personal information handled through the platform.
                                 This Privacy Policy explains what data we collect, how we use it,
                                 and your rights in relation to your data.
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
                                 2. Information We Collect
                             </h2>
                             <p className="mb-3">
-                                We collect the following categories of information when you use PerformIQ:
+                                We collect the following categories of information when you use Society Maintenance Tracker:
                             </p>
                             <div className="overflow-x-auto">
                                 <table className="w-full text-sm border-collapse">
@@ -109,10 +109,10 @@ export default function PrivacyPage() {
                                     </thead>
                                     <tbody className="divide-y divide-slate-100">
                                         {[
-                                            ['Account information', 'Full name, work email address, role assignment'],
-                                            ['Performance data', 'Goal titles, KPI targets, actual values, weightages, achievement status'],
-                                            ['Check-in records', 'Quarterly actuals, completion dates, manager feedback notes'],
-                                            ['Usage data', 'Page visits, actions taken, timestamps of approvals and submissions'],
+                                            ['Account information', 'Full name, resident email address, role assignment'],
+                                            ['Complaint data', 'Title, category, description, linked/uploaded photo URLs, timestamps'],
+                                            ['Notice board data', 'Broadcast notices, critical pinned announcements, publisher details'],
+                                            ['Admin workflow data', 'Priority levels, status history logs, admin comments, timestamps'],
                                             ['Authentication data', 'Hashed passwords, session tokens, OAuth provider identifiers'],
                                         ].map(([cat, ex]) => (
                                             <tr key={cat} className="hover:bg-slate-50">
@@ -134,15 +134,15 @@ export default function PrivacyPage() {
                                 3. How We Use Your Information
                             </h2>
                             <p className="mb-3">
-                                Information collected through PerformIQ is used exclusively for:
+                                Information collected through Society Maintenance Tracker is used exclusively for:
                             </p>
                             <ul className="list-disc pl-5 space-y-2">
-                                <li>Providing and operating the performance management platform.</li>
-                                <li>Enabling goal-setting, check-in, and approval workflows.</li>
-                                <li>Generating performance reports and analytics for administrators.</li>
-                                <li>Maintaining an audit trail of all actions for governance purposes.</li>
+                                <li>Providing and operating the society maintenance tracking platform.</li>
+                                <li>Enabling complaint submission, notice boards, and administrative status transitions.</li>
+                                <li>Generating maintenance metrics and statistics for administrators.</li>
+                                <li>Maintaining a status history log of all actions for accountability.</li>
                                 <li>Authenticating users and maintaining session security.</li>
-                                <li>Sending email notifications related to account actions (e.g. password reset, goal submission confirmation).</li>
+                                <li>Sending email notifications related to account actions (e.g. password reset).</li>
                             </ul>
                         </section>
 
@@ -156,9 +156,8 @@ export default function PrivacyPage() {
                             </p>
                             <ul className="list-disc pl-5 space-y-2">
                                 <li>
-                                    <strong>Within your organisation</strong> — Managers can view
-                                    their direct reports&apos; goal sheets and check-in data. Administrators
-                                    can access aggregate organisation-wide data.
+                                    <strong>Within your organisation</strong> — Administrators can view
+                                    all complaints and notices. Residents can view their own complaint history and broadcast notices.
                                 </li>
                                 <li>
                                     <strong>Service providers</strong> — We may engage third-party
@@ -177,9 +176,8 @@ export default function PrivacyPage() {
                                 5. Data Retention
                             </h2>
                             <p>
-                                Performance data (goal sheets, check-ins, audit logs) is retained
-                                for the duration of the performance year plus a rolling 36-month
-                                archive period to support year-over-year benchmarking. Account data
+                                Complaint data, notice logs, and status history are retained while your account
+                                is active, or for historical maintenance tracking purposes. Account data
                                 is retained while your account is active. Upon account deletion,
                                 personal identifiers are removed within 30 days, though anonymised
                                 aggregate data may be retained indefinitely.
@@ -205,7 +203,7 @@ export default function PrivacyPage() {
                                 7. Cookies &amp; Tracking
                             </h2>
                             <p>
-                                PerformIQ uses session cookies necessary for authentication and
+                                Society Maintenance Tracker uses session cookies necessary for authentication and
                                 platform operation. We do not use advertising or cross-site
                                 tracking cookies. You may configure your browser to block all
                                 cookies, though this may affect platform functionality.
@@ -228,8 +226,8 @@ export default function PrivacyPage() {
                                 <li><strong>Objection</strong> — Object to certain processing activities.</li>
                             </ul>
                             <p className="mt-3">
-                                To exercise any of these rights, contact your HR administrator or
-                                the PerformIQ system administrator within your organisation.
+                                To exercise any of these rights, contact your housing society administrator or
+                                the Society Maintenance Tracker system administrator within your organisation.
                             </p>
                         </section>
 
@@ -238,7 +236,7 @@ export default function PrivacyPage() {
                                 9. Third-Party Services
                             </h2>
                             <p>
-                                PerformIQ supports optional sign-in via Google, GitHub, and LinkedIn
+                                Society Maintenance Tracker supports optional sign-in via Google, GitHub, and LinkedIn
                                 OAuth. If you choose to authenticate through these services, their
                                 respective privacy policies also apply. We only receive the profile
                                 information (name, email) necessary to create your account.
@@ -262,8 +260,8 @@ export default function PrivacyPage() {
                                 11. Contact
                             </h2>
                             <p>
-                                For privacy-related enquiries, please contact your organisation&apos;s
-                                HR administrator or the PerformIQ system administrator. For the
+                                For privacy-related enquiries, please contact your housing society administrator
+                                or the Society Maintenance Tracker system administrator. For the
                                 demo application, contact the development team through the Ignitia
                                 2K26 hackathon channels.
                             </p>
@@ -274,7 +272,7 @@ export default function PrivacyPage() {
                     {/* Footer rule */}
                     <div className="mt-10 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <p className="text-xs text-slate-400">
-                            © 2026 PerformIQ · For demonstration purposes only
+                            © 2026 Society Maintenance Tracker · For demonstration purposes only
                         </p>
                         <Link
                             href="/terms"
